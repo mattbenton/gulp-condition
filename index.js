@@ -1,10 +1,14 @@
 var through   = require('through2');
 var gulpmatch = require('gulp-match');
 
+function isArray ( arg ) {
+  return Object.prototype.toString.call(arg) === '[object Array]';
+}
+
 function gulpCondition ( condition, transformA, transformB ) {
 
   function applyTransforms ( context, file, transforms, callback ) {
-    if ( !_.isArray(transforms) ) {
+    if ( !isArray(transforms) ) {
       transforms = [transforms];
     }
 
