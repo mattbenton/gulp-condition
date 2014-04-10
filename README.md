@@ -16,7 +16,8 @@ gulp.task('build', function () {
     // Uglify and Gzip if `condition` evaluates to true.
     .pipe(gcond(condition, [uglify(), gzip()]))
     .pipe(gulp.dest('./dist'));
-});```
+});
+```
 
 ## API
 
