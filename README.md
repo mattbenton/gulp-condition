@@ -2,6 +2,11 @@
 
 Conditionally pipe streams using Gulp.
 
+## Installation
+
+`npm install git://github.com/mattbenton/gulp-condition.git --save-dev`
+
+
 ## Usage
 
 ```javascript
