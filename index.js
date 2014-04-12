@@ -8,7 +8,10 @@ function isArray ( arg ) {
 function gulpCondition ( condition, transformA, transformB ) {
 
   function applyTransforms ( context, file, transforms, callback ) {
-    if ( !isArray(transforms) ) {
+    if ( isArray(transforms) ) {
+      // Clone array because we are shifting stuff out of it.
+      transforms = Array.prototype.slice.call(transforms, 0);
+    } else {
       transforms = [transforms];
     }
 
